@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="keywords" content="उच्च प्राथमिक विद्यालय भिम्मापुरवा " />
-    <link rel="icon" href="../images/ban_32x32.jpg" sizes="32x32" />
+    <link rel="icon" href="../web/images/ban_32x32.jpg" sizes="32x32" />
     <script>
         addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -36,12 +36,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font-Awesome-Icons-CSS -->
     <!-- //Custom-Files -->
-
+     
     <!-- Web-Fonts -->
     <link href="//fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese"
         rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
     <!-- //Web-Fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         /* Center the loader */
         #loader {
@@ -99,15 +100,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </style>
 
 <script> 
-    $(document).ready(function(){
-      $("button").click(function(){
-        var div = $("div");  
-        div.animate({left: '300px'}, "slow");
-        div.animate({fontSize: '3em'}, "slow");
+    $(window).ready(function(){
+        $("#h3").animate({fontSize: "3em"},7000); 
+        var div1 = $("#div1");  
+        div1.animate({margin: "-=800px"});
+        div1.animate({margin: "+=800px"},10000);
+          
+        var div2 = $("#div2");  
+        div2.animate({margin: "-=800px"});
+        div2.animate({margin: "+=800px"},10000);
+       
+          
+        var div3 = $("#div3"); 
+        div3.animate({margin: "-=800px"}); 
+        div3.animate({margin: "+=800px"},10000); 
+        // font effect
+        
+              
       });
-    });
+   
     </script> 
-    
+    <script> 
+    $(document).ready(function(){
+    $("#slidedown1").slideDown(10000);
+    $("#slidedown2").slideDown(10000);
+    $("#slidedown3").slideDown(10000);
+    $("#slidedown4").slideDown(10000);
+      }); 
+</script>
   
 </head>
 
@@ -121,7 +141,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <!-- logo --><!-- <img src="images/ups logo.png" alt="about" width="105px" height="65px" /> -->
                 <div id="logo">
 
-                    <h1><a href="index.html" rel="" class="text-wh font-weight-bold">उच्च प्राथमिक विद्यालय भिम्मापुरवा,अमीनाबाद कटारी,  जिला कन्नौज</a>
+                    <h1><a href="index.html" rel="" class="text-wh font-weight-bold" >उच्च प्राथमिक विद्यालय भिम्मापुरवा,अमीनाबाद कटारी,  जिला कन्नौज</a>
 <!-- <a href="index.html">U.P.S.Bhimmapurwa</a> --></h1>
                 </div>
             </div>
@@ -130,7 +150,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="header d-md-flex justify-content-between align-items-center py-1 px-lg-2 px-1" style="font-family: fantasy;" >
                 <div class="nav_w3ls ml-lg-5">
                     <nav>
-                        <label for="drop" class="toggle">Menu</label>
+                        <label for="drop" class="toggle" style="font-style: normal;">Menu</label>
                         <input type="checkbox" id="drop" />
                         <ul class="menu" >
                             <li><a href="index.html" ><i class='fas fa-house-user' style='font-size:20px;color:red;'></i>होम </a></li>
@@ -152,7 +172,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </ul>
                             </li>
                             <li><a href="#contact"><i class='fas fa-phone-alt' style='font-size:20px;color:red'></i>सम्पर्क करे</a></li>
-                            <li><a href="../admin/index.php"><i class='fas fa-sign-in-alt' style='font-size:20px;color:red'></i>लॉग इन करें</a></li>
+                            <li><a href="../web/admin/"><i class='fas fa-sign-in-alt' style='font-size:20px;color:red'></i>लॉग इन करें</a></li>
                             <li><a href="index.html"><i class='fas fa-edit' style='font-size:20px;color:red'></i>पंजीकृत </a></li>
                         </ul>
                         
@@ -256,9 +276,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- services -->
     <div class="services py-5" id="what">
         <div class="container py-xl-5 py-lg-3">
-            <h3 class="title-w3 mb-xl-5 mb-sm-4 mb-2 text-center text-wh font-weight-bold" style="color: green;">हम क्या करते हैं?</h3>
+            <h3 class="title-w3 mb-xl-5 mb-sm-4 mb-2 text-center text-wh font-weight-bold" id="h3" style="color: green;">हम क्या करते हैं?</h3>
             <div class="row w3pvtits-services-row text-center">
-                <div class="col-lg-4 serv-w3mk mt-5">
+                <div class="col-lg-4 serv-w3mk mt-5" id="div1" style="align-self: left;">
                     <div class="w3pvtits-services-grids">
                         <span class="fa fa-leanpub ser-icon" aria-hidden="true"></span>
                         <h4 class="text-bl my-4">सक्रिय अध्ययन</h4>
@@ -266,7 +286,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <a class="service-btn mt-xl-5 mt-4 btn" href="#">अधिक पढ़ें<span class="fa fa-long-arrow-right ml-2"></span></a>
                     </div>
                 </div>
-                <div class="col-lg-4 serv-w3mk mt-5">
+                <div class="col-lg-4 serv-w3mk mt-5" id="div2">
                     <div class="w3pvtits-services-grids">
                         <span class="fa fa-graduation-cap ser-icon" aria-hidden="true"></span>
                         <h4 class="text-bl my-4">पूरे दिन के कार्यक्रम </h4>
@@ -274,7 +294,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <a class="service-btn mt-xl-3 mt-5 btn" href="#">अधिक पढ़ें<span class="fa fa-long-arrow-right ml-2"></span></a>
                     </div>
                 </div>
-                <div class="col-lg-4 serv-w3mk mt-5">
+                <div class="col-lg-4 serv-w3mk mt-5"  id="div3">
                     <div class="w3pvtits-services-grids">
                         <span class="fa fa-users ser-icon" aria-hidden="true"></span>
                         <h4 class="text-bl my-4">विशेषज्ञ शिक्षक</h4>
@@ -293,7 +313,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container py-xl-5 py-lg-3">
             <h3 class="title-w3 mb-5 text-center font-weight-bold"> लोकप्रिय पाठ्यक्रम</h3>
             <div class="row branches-position pt-lg-4">
-                <div class="col-lg-3 col-sm-6 place-w3">
+                <div class="col-lg-3 col-sm-6 place-w3"  id="slidedown1">
                     <!-- branch-img -->
                     <div class="w3pvtits-services-grids">
                            
@@ -305,7 +325,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
                 <!-- / branch-img -->
-                <div class="col-lg-3 col-sm-6 place-w3 mt-sm-0 mt-4">
+                <div class="col-lg-3 col-sm-6 place-w3 mt-sm-0 mt-4" id="slidedown2">
                     <!-- team-img -->
                     <div class="w3pvtits-services-grids">
                            
@@ -317,19 +337,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
                 <!-- /.branch-img -->
-                <div class="col-lg-3 col-sm-6 place-w3 mt-lg-0 mt-4">
+                <div class="col-lg-3 col-sm-6 place-w3 mt-lg-0 mt-4" id="slidedown3">
                     <!-- team-img --><div class="w3pvtits-services-grids">
-                       <h4 class="text-bl my-4">       मन की शांति             </h4>
+                       <h4 class="text-bl my-4">       मन की शांति और तन की शक्ति             </h4>
                         <p class="text-justify">   योगा के माध्यम से अध्ययन के लिए मन की शांति को बढ़ाना है।</p>
                     </div>
                     <div class="team-img team-img-3">
                      </div>
                 </div>
                 <!-- /.branch-img -->
-                <div class="col-lg-3 col-sm-6 place-w3 mt-lg-0 mt-4">
+                <div class="col-lg-3 col-sm-6 place-w3 mt-lg-0 mt-4" id="slidedown4">
                     <!-- team-img -->
                     <div class="w3pvtits-services-grids">
-                            <h4 class="text-bl my-4">सामाजिक वातावरण</h4>
+                            <h4 class="text-bl my-2">सामाजिक वातावरण</h4>
                             <p class="text-justify">छात्र चलचित्रों तथा ऑडियो फिल्मों के साथ कक्षा में सामाजिक जीवन सीख सकते हैं।</p>
                         </div>
                     <div class="team-img team-img-4">
