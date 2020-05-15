@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../admin/include.php');
+include('admin/include.php');
 $msg="";
 if(isset($_POST['submit'])){
   $username=$_POST['uname'];
@@ -22,14 +22,14 @@ if(isset($_POST['submit'])){
       
       if ($result->num_rows==1 && $_SESSION['role']=="student")
        {
-               header('location:../admin/studentdashboard.php');
+               header('location:admin/studentdashboard.php');
               
        }
        else if($result->num_rows==1  && $_SESSION['role']=="teacher")    
        {
-        header('location:../admin/teacherdashboard.php');
+        header('location:admin/teacherdashboard.php');
        }elseif ($result->num_rows==1 && $_SESSION['role']=="admin") {
-          header('location:../admin/dashboard.php');
+          header('location:admin/dashboard.php');
        }else{
          $msg="Username or Password is Incorrect!";
        }
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="keywords" content="उच्च प्राथमिक विद्यालय भिम्मापुरवा " />
-    <link rel="icon" href="../web/images/ban_32x32.jpg" sizes="32x32" />
+    <link rel="icon" href="images/ban_32x32.jpg" sizes="32x32" />
     <script>
         addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -94,9 +94,9 @@ if(isset($_POST['submit'])){
                         <label for="drop" class="toggle">Menu</label>
                         <input type="checkbox" id="drop" />
                         <ul class="menu" >
-                            <li><a href="../index.html" ><i class='fas fa-house-user' style='font-size:20px;color:red;'></i>होम </a></li>
-                            <li><a href="../web/admin/"><i class='fas fa-sign-in-alt' style='font-size:20px;color:red'></i>लॉग इन करें</a></li>
-                            <li><a href="../index.html"><i class='fas fa-edit' style='font-size:20px;color:red'></i>पंजीकृत </a></li>
+                            <li><a href="index.html" ><i class='fas fa-house-user' style='font-size:20px;color:red;'></i>होम </a></li>
+                            <li><a href="admin/index.php"><i class='fas fa-sign-in-alt' style='font-size:20px;color:red'></i>लॉग इन करें</a></li>
+                            <li><a href="index.html"><i class='fas fa-edit' style='font-size:20px;color:red'></i>पंजीकृत </a></li>
                         </ul>
                         
                     </nav>
