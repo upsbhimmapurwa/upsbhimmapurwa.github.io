@@ -15,7 +15,8 @@ if (isset($_POST['readrecord']))
 	               <td>S.No.</td>
 	               <td>Class ID</td>
 	               <td>Class</td>
-	               <td>Year</td>
+				   <td>Year</td>
+	               
 	               <td>Edit</td>
 	               <td>Delete</td>
 	               </tr>';
@@ -34,7 +35,8 @@ $sql=" select * from class ";
 	               <td>'.$i.'</td>
 	               <td>'.$rows['class_id'].'</td>
 	               <td>'.$rows['class'].'</td>
-	               <td>'.$rows['year'].'</td>
+				   <td>'.$rows['year'].'</td>
+	               
 	               <td><button  onclick="editData('.$rows['class_id'].')" class="btn btn-warning" >Edit</button></td>
 	               <td><button  onclick="deleteData('.$rows['class_id'].')" class="btn btn-danger" >Delete</button></td>
                </tr>';
@@ -54,7 +56,7 @@ $data.= '</table>';
 echo $data;
 }
 //insert data
-if(isset($_POST['class_id'])&& isset($_POST['class']) && isset($_POST['year']))
+if(isset($_POST['class_id'])&& isset($_POST['class'])&& isset($_POST['year']) )
 {
 $query= " INSERT INTO class (class_id,class,year) VALUES ('$class_id','$class','$year')";
       $rows= mysqli_query($conn,$query);
@@ -108,8 +110,9 @@ if(isset($_POST['edithidden_class_id']))
 	 $hidden_class_id=$_POST['edithidden_class_id'];
 	 $class_id=$_POST['editclass_id'];
 	  $class=$_POST['editclass'];
-	 $year=$_POST['edityear'];
-	$query=" UPDATE class SET class_id='$class_id',class='$class', year='$year' where class_id= '$hidden_class_id' ";
+	  $year=$_POST['edityear'];
+	 
+	$query=" UPDATE class SET class_id='$class_id',class='$class',year='$year' where class_id= '$hidden_class_id' ";
 	mysqli_query($conn,$query); 
 }
 ?>

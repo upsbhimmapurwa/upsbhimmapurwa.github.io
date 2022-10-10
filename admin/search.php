@@ -43,9 +43,13 @@ $role=$_SESSION['role'];
     <!-- Favicon-->
     <link rel="shortcut icon" href="../admin/images/ban_32x32.jpg" sizes="32x32">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"/>
+ 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
       <script type="text/javascript">
 
 function myFunction()
@@ -121,7 +125,7 @@ box-shadow: 0 0 20px rgba(0,0,0,0.15);
 .content-table th,
 .content-table td
 {
-  padding: 18px 12px;
+  padding: 10px 10px;
 }
 .content-table tbody tr
 {
@@ -147,7 +151,7 @@ border-bottom: 2px solid #009879;
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/head1.jpg" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.jpg" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5" ><?= $_SESSION['username'];?></h2><span><?= $_SESSION['role'];?></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -159,7 +163,15 @@ border-bottom: 2px solid #009879;
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
             <li ><a href="dashboard.php"> <i class="fas fa-home"></i>Home  </a></li>
             <li  ><a href="teacher.php"> <i class="fa fa-chalkboard-teacher"></i>Teacher   </a></li>
-            <li  ><a href="newstudent.php"> <i class="fas fa-user-tie"></i>New Student  </a></li>
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class=" fas fa-user-tie"></i>Add Student Data</a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="newstudent.php">Add Student Data</a></li>
+                <li><a href="addparent.php">Add Parents Data</a></li>                
+              </ul>
+            </li>
+            <li><a href="updateclass.php"><i class='fas fa-search'></i>Student Class Update</a></li>
+            <li><a href="SearchStudentDetail.php"><i class='fas fa-search'></i>Student/Parent Details</a></li>
+            <li><a href="trancferstudent.php"><i class='fas fa-search'></i>T.C. issue</a></li>
             <li><a href="class.php"> <i class="fas fa-book-reader"></i>Class  </a></li>
             <li ><a href="year.php"> <i class=" far fa-calendar-alt"></i>Year    </a></li>
             <li><a href="register.php"> <i class="fas fa-font"></i>Register Admin </a></li>
@@ -169,10 +181,11 @@ border-bottom: 2px solid #009879;
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="result.php">Add Result</a></li>
                 <li><a href="showresult.php">Show Result</a></li>
-                
+                                
               </ul>
             </li>
             <li class="active"><a href="search.php"> <i class='fas fa-search'></i>Search Data </a></li>
+            
           </ul>
         </div>
        
@@ -184,11 +197,12 @@ border-bottom: 2px solid #009879;
         <nav class="navbar">
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
-              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-outdent" style="font-size:20px;color:red"> </i></a><a href="dashboard.php" class="navbar-brand">
-                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">U.P.S. BHIMMAPURWA</strong> <span>Aminabad Katri, Kannauj</span></div></a></div>
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-outdent" style="font-size:20px;color:red"> </i></a><a href="index.php" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">उच्च प्राथमिक विद्यालय भिम्मापुरवा</strong> <span>कटरी अमीनाबाद, कन्नौज</span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Log out-->
-                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">Logout</span><i class='fas fa-sign-out-alt' ></i></a></li>
+                <span class="text-success"> <?php echo date("d/m/Y")."   " .date("l");?></span>
+                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">  Logout</span><i  class='fas fa-sign-out-alt' ></i></a></li>
               </ul>
             </div>
           </div>
@@ -199,57 +213,53 @@ border-bottom: 2px solid #009879;
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active">Search   </li>
+            <li class="breadcrumb-item active">Student Detail </li>
           </ul>
         </div>
+        <?php 
+        if(isset($_POST['submit']))
+        {
+          $sr = $_POST['srno'];
+      $name = $_POST['name'];
+      $fname = $_POST['fname'];
+      $gender = $_POST['gender'];
+      $class = $_POST['class'];
+      $year = $_POST['year'];}?>
+        <div align="right"><a href="../admin/exporttoexcel.php?srno=<?php echo $sr; ?>&name=<?php echo $name; ?>&gender=<?php echo $gender; ?>&fname=<?php echo $fname; ?>&class=<?php echo $class; ?>&year=<?php echo $year; ?>" class="btn btn-primary" style="text-decoration: none;">Download Excel</a></div>
       </div>
- <section>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-2" >
-        <div class="modal-body my-3 pt-4">
-                 <h4 style="background:#1ea0ba;color:#fff;text-align: center; padding:10px 0px 10px 5px">Search Student Data</h4>
+  <div class="container">
+     	<div class="row justify-content">
+     		<div class=" col-sm-3 bg-light rounded my-2 py-2">
+             <h4 class="text-center text-dark pt-2 ">Search Student Data</h4>
+             <hr>
                 <form action="search.php" method="post">
                     <div class="form-group">
-                        <label class="col-form-label">S.R.No.</label>
+                        <label class="col">S.R.No.</label>
                         <input type="text" class="form-control" placeholder="" name="srno" >
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label">Name</label>
+                        <label class="col">Name</label>
                         <input type="text" class="form-control" placeholder="" name="name" >
-                    </div>
-                     <div class="form-group">
-                        <label class="col-form-label">Father Name</label>
+                        <label class="col">Father Name</label>
                         <input type="text" class="form-control" placeholder="" name="fname" >
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label">Gender</label>
+                        <label class="col">Gender</label>
                         <input type="text" class="form-control" placeholder="" name="gender" >
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label">Year</label>
+                        <label class="col">Year</label>
                         <input type="text" class="form-control" placeholder="" name="year" >
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label">Class</label>
-                        <input type="text" class="form-control" placeholder="" name="class" >
+                        <label class="col">Class</label>
+                        <input type="text" class="form-control" placeholder="FIrst select Year!" name="class" >
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Search</button>
-                    <div class="row sub-w3l mt-3 mb-5">
-                        
-                    </div>
-                    
+                                  
                 </form>
-            </div>
+         </div>
 
-   </div>
-   <div class="col-sm-10" > 
+   
+   <div class="col-sm-9" > 
              <?php
 if (isset($_POST['submit'])) 
 {
- 
-     echo "<div class='table-responsive'>";
-   echo "<table class='content-table'>";
+  echo "<div class='table-responsive'>";
+     
+   echo "<table class='table content-table table-bordered table-striped table-hover '>";
          echo "<thead>";
          echo  "<tr>";
               echo  "  <th>S.R.No.</th>";
@@ -287,7 +297,7 @@ if (isset($_POST['submit']))
       if ($sr != "" || $name != "" || $fname != "" || $gender != "" || $class != "" || $year != "" ) 
      {
       
-      $sql= "SELECT * FROM  student WHERE srno = '$sr' or name='$name' or gender='$gender' or fname='$fname' or class='$class' or year ='$year'";
+      $sql= "SELECT * FROM  student WHERE srno = '$sr' or name ='$name' or gender='$gender' or fname='$fname'   or ((class='$class' and year ='$year' ) and year='$year') ";
 
           $query = mysqli_query($conn,$sql) or die('error');
           $num =mysqli_num_rows($query);
@@ -329,6 +339,7 @@ if (isset($_POST['submit']))
                              echo "Recored is not Save.";
           }
     
+         
        }
                 
 }
@@ -337,22 +348,27 @@ if (isset($_POST['submit']))
     </tbody>
     </table>
                      </div>
-        </form>
+        
+      </div>
       </div>
     </div>
   </div>
-</section>
-
     <!-- JavaScript files-->
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script src="../admin/dashboard/jquery/jquery.min.js"></script>
-    <script src="../admin/dashboard/jquery/bootstrap.bundle.min.js"></script>
-    <script src="../admin/dashboard/jquery/grasp_mobile_progress_circle-1.0.0.min.js"></script>
-    <script src="../admin/dashboard/jquery/jquery.cookie.js"> </script>
-    <script src="../admin/dashboard/jquery/Chart.min.js"></script>
-    <script src="../admin/dashboard/jquery/jquery.validate.min.js"></script>
+    
+   
+    
+   
+    
+    
+   
     <script src="../admin/dashboard/jquery/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="../admin/dashboard/jquery/front.js"></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+    $('table').DataTable();
+});
+
+</script>
   </body>
 </html>

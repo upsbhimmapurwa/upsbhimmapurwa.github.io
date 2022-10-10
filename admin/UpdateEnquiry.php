@@ -15,61 +15,6 @@ $role=$_SESSION['role'];
 
 
   
- /* if(isset($_POST['submit']))
-  {
-    
-  if (getimagesize($_FILES['photo']['tmp_name'])==false) 
-  {
-    echo "please select image";
-  }
-  else
-  {
-    
-    $photoname= addslashes($_FILES['photo']['name']);
-  
-    $photo= base64_encode(file_get_contents(addslashes($_FILES['photo']['tmp_name'])));
-    
-  } 
-    
-  
-      $name=$_POST['name'];
-      $srno=$_POST['srno'];
-      $academicyearid=$_POST['academicyearid'];
-      $classid=$_POST['classid'];
-      $mothername=$_POST['mothername'];
-      $fathername=$_POST['fathername'];
-      $dateofbirth=$_POST['dateofbirth'];
-      $village=$_POST['village'];
-      $mobileno=$_POST['mobileno'];
-      $phoneno=$_POST['phoneno'];
-      $genderid=$_POST['genderid'];
-      $gramsabh=$_POST['gramsabh']; 
-      $city=$_POST['city'];  
-      $pin=$_POST['pin'];  
-       $state=$_POST['state']; 
-      $country=$_POST['country'];  
-      $remarks=$_POST['remarks'];  
-      
-     if ($name==''|| $srno==''|| $academicyearid=='' || $classid==''|| $mothername==''|| $fathername==''|| $dateofbirth==''|| $village==''||
-      $mobileno==''|| $phoneno==''|| $genderid==''|| $gramsabh==''|| $city==''|| $pin==''|| $country=='' )
-       {
-      echo"<script>fill all values..</script>";
-      exit();
-     }
-     else
-     {
-      $query= " INSERT INTO student (srno,name,year,class,mname,fname,dob,village,mobile, phone, gender, gramsabha,city,state, pin,country,remark,photoname,photo) VALUES ('$srno','$name','$academicyearid','$classid','$mothername','$fathername','$dateofbirth','$village','$mobileno','$phoneno','$genderid','$gramsabh','$city','$state','$pin','$country','$remarks','$photoname','$photo')";
-      $run=mysqli_query($conn,$query);
-      if($run)
-      {
-        echo " data insert sucessfully";
-      }
-      else
-      {
-        echo "there is some problem".mysqli_error($conn);
-      }
-
-  }*/
     
   
   if (isset($_POST['submit'])|| $srno!==0 )
@@ -256,7 +201,7 @@ var message='';
   <div class="col-sm-3">
     <label class="control-label" for="em">Student Roll No.. :<span class="mandatory" style="color: #ff0000;">*</span></label></div>
   <div class="col-sm-3">
-    <input type="text" title="rollno" id="rollno" name="rollno" value='<?php echo $row['rollno']; ?>' class="textbox form-control text_upper" readonly>
+    <input type="text" title="rollno" id="rollno" name="rollno" value='' class="textbox form-control text_upper" readonly>
     </div>
   <div class="col-sm-3">
     <label>Academic Year :<span class="mandatory" style="color: #ff0000;">*</span></label>
@@ -352,7 +297,7 @@ var message='';
   </div>
   <div class="col-sm-3">
     <select name="genderid" id="genderid" class="dropdown form-control mandatoryvalue" >
-      <option value="<?php echo $row['srno']; ?>"><?php echo $row['srno']; ?></option>
+      <option value="<?php echo $row['gender']; ?>"><?php echo $row['gender']; ?></option>
       <option value="BOY">BOY</option>
       <option value="GIRL">GIRL</option>
     </select>
@@ -397,7 +342,7 @@ var message='';
   </div>
   <div class="col-sm-3">
     <select name="caste" id="caste" class="dropdown form-control mandatoryvalue" >
-      <option value=-1><?php echo $row['caste']; ?></option>
+      <option value="<?php echo $row['caste']; ?>"><?php echo $row['caste']; ?></option>
       <option value="GEN">GEN</option>
       <option value="SC">SC</option>
       <option value="ST">ST</option>

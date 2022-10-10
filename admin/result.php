@@ -97,7 +97,9 @@ function myFunction()
   }
   
 }
+
 </script>
+
  <style >
         .content-table
 {
@@ -148,7 +150,7 @@ border-bottom: 2px solid #009879;
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-         <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/head1.jpg" alt="person" class="img-fluid rounded-circle">
+         <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.jpg" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5" ><?= $_SESSION['username'];?></h2><span><?= $_SESSION['role'];?></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -158,7 +160,7 @@ border-bottom: 2px solid #009879;
         <div class="main-menu">
           <h5 class="sidenav-heading">DASHBOARD</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li ><a href="index.php"> <i class="fas fa-home"></i>Home  </a></li>
+            <li ><a href="dashboard.php"> <i class="fas fa-home"></i>Home  </a></li>
             <li  ><a href="teacher.php"> <i class="fa fa-chalkboard-teacher"></i>Teacher   </a></li>
             <li  ><a href="newstudent.php"> <i class="fas fa-user-tie"></i>New Student  </a></li>
             <li><a href="class.php"> <i class="fas fa-book-reader"></i>Class  </a></li>
@@ -168,7 +170,7 @@ border-bottom: 2px solid #009879;
             <li><a href="exam.php"> <i class="  fas fa-print"></i>Examination </a></li>
             <li class="active"><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class=" fas fa-file-alt"></i>Student Result</a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li class="active"><a href="result.php">Add Result</a></li>
+                <li class="active" ><a href="result.php">Add Result</a></li>
                 <li><a href="showresult.php">Show Result</a></li>
                 
               </ul>
@@ -186,10 +188,11 @@ border-bottom: 2px solid #009879;
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-outdent" style="font-size:20px;color:red"> </i></a><a href="index.php" class="navbar-brand">
-                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">U.P.S. BHIMMAPURWA</strong> <span>Aminabad Katri, Kannauj</span></div></a></div>
+                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">उच्च प्राथमिक विद्यालय भिम्मापुरवा</strong> <span>कटरी अमीनाबाद, कन्नौज</span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Log out-->
-                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">Logout</span><i  class='fas fa-sign-out-alt' ></i></a></li>
+                <span class="text-success"> <?php echo date("d/m/Y")."   " .date("l");?></span>
+                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">  Logout</span><i  class='fas fa-sign-out-alt' ></i></a></li>
               </ul>
             </div>
           </div>
@@ -297,54 +300,54 @@ border-bottom: 2px solid #009879;
               <tr>
                 <td><label>Hindi</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_1" id="sub_1" name="sub_1" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_1" id="sub_1" name="sub_1" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required/></td>
               
                 <td><label>English</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_2" id="sub_2" name="sub_2" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_2" id="sub_2" name="sub_2" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
               </tr><tr>
                 <td><label>Maths</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_3" id="sub_3" name="sub_3" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_3" id="sub_3" name="sub_3" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
               
                 <td><label>Science</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_4" id="sub_4" name="sub_4" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_4" id="sub_4" name="sub_4" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
               </tr><tr>
                 <td><label>Social Science</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_5" id="sub_5" name="sub_5" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_5" id="sub_5" name="sub_5" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
               
                 <td><label>Sanskrit</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_6" id="sub_6" name="sub_6" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_6" id="sub_6" name="sub_6" value='' max="50" maxlength="2"  class="textbox mandatoryvalue form-control text_upper" required /></td>
               </tr><tr>
                 <td><label>Art</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_7" id="sub_7" name="sub_7" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_7" id="sub_7" name="sub_7" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
              
                 <td><label>Home Scinece</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_8" id="sub_8" name="sub_8" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_8" id="sub_8" name="sub_8" value='' max="50" maxlength="2"  class="textbox mandatoryvalue form-control text_upper" required /></td>
               </tr><tr>
                 <td><label>Agriculture</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_9" id="sub_9" name="sub_9" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_9" id="sub_9" name="sub_9" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
               
-                <td><label>Physical Science]</label></td>
+                <td><label>Physical Science</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_10" id="sub_10" name="sub_10" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_10" id="sub_10" name="sub_10" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
               </tr><tr>
                 <td><label>Enviroment</label></td>
                 <td><label>50</label></td>
-                <td><input type="text" title="sub_11" id="sub_11" name="sub_11" value='' class="textbox mandatoryvalue form-control text_upper" required /></td>
+                <td><input type="text" title="sub_11" id="sub_11" name="sub_11" value='' max="50" maxlength="2" class="textbox mandatoryvalue form-control text_upper" required /></td>
               </tr>
               <tr></tr>
             </tbody>
             </table>
                
           </div>
-          <p align="center">
+          <p style=" text-align:center">
           <button type="submit"  name="submit" onclick="return myFunction();" style="background:#1ea0ba; color:#FFFFFF; padding:8px 20px; border:none; border-radius:3px; font-size:16px; cursor:pointer">Add Result</button>
              </p>
             </div>
@@ -437,6 +440,7 @@ border-bottom: 2px solid #009879;
                 else
                 {
                  echo "there is some problem".mysqli_error($conn);
+                 echo "there is no data of student";
                 }
                
               }?>

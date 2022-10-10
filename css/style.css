@@ -148,12 +148,12 @@ nav {
 }
 
 #logo a {
-    float: left;
+    float: right;
     display: initial;
-    font-weight: 600;
+    font-weight: 60px;
     font-size: 35px;
-    color: #719cfe;
-    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+    color: yellow;
+    text-shadow: 2px 5px 3px red;
 }
 
 /* Since we'll have the "ul li" "float:left"
@@ -438,7 +438,7 @@ li>a:only-child:after {
     z-index: 2;
     position: relative;
     -webkit-transition: border-radius .1s linear, background .1s linear, z-index 0s linear;
-    -webkit-transition-delay: .8s;
+    -webkit-transition-delay: 0.8s;
     text-align: center;
     color: #fff;
     text-transform: capitalize;
@@ -450,7 +450,7 @@ li>a:only-child:after {
 }
 
 #demo .parent:hover,
-#demo .content:hover~.parent {
+#demo .content:hover~.parent{
     -webkit-transition-delay: 0s, 0s, 0s;
 }
 
@@ -532,7 +532,12 @@ li>a:only-child:after {
     position: relative;
     z-index: 1;
 }
-
+@media only screen and (min-device-width: 400px) {
+    body { 
+       background-image: url(../images/ban_1.jpg) no-repeat center; 
+    }
+  }
+  
 /* banner text */
 .style-banner {
     padding-top: 18em;
@@ -623,7 +628,7 @@ h3.title-sub span {
 
 /* what */
 .services {
-    background: url(../images/banner3.jpg) center no-repeat fixed;
+    background: url() center no-repeat fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -700,14 +705,13 @@ a.service-btn:hover,
 }
 
 .team-img-1 {
-    background: url(../images/g22.png) no-repeat center;
+    background: url(../images/g.png) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;
 }
-
 .team-img-2 {
     background: url(../images/g23.jpg) no-repeat center;
     background-size: cover;
@@ -734,6 +738,7 @@ a.service-btn:hover,
     -moz-background-size: cover;
     -ms-background-size: cover;
 }
+
 
 .team-content {
     padding: 3em 2em 0;
@@ -1039,7 +1044,7 @@ ul.apps-lists li a.active span {
 
 /* inner banner */
 .inner-banner-w3ls {
-    background: url(../images/banneer5.jpg) no-repeat center;
+    background: url(../images/banner5.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
