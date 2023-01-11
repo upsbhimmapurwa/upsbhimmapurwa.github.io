@@ -136,6 +136,19 @@ background-color: #f3f3f3;
 {
 border-bottom: 2px solid #009879;
 }
+/* .legend {
+        text-align: left;
+        line-height: 10px;
+        color: #555;
+    } */
+
+        /* .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        } */
 /*.content-table tr:hover {background-color:#f5f5f5;}
 */
     </style>
@@ -148,7 +161,7 @@ border-bottom: 2px solid #009879;
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/head1.jpg" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.jpg" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5" ><?= $_SESSION['username'];?></h2><span><?= $_SESSION['role'];?></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -160,7 +173,13 @@ border-bottom: 2px solid #009879;
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
             <li ><a href="dashboard.php"> <i class="fas fa-home"></i>Home  </a></li>
             <li  ><a href="teacher.php"> <i class="fa fa-chalkboard-teacher"></i>Teacher   </a></li>
-            <li  ><a href="newstudent.php"> <i class="fas fa-user-tie"></i>New Student  </a></li>
+            <li><a href="" aria-expanded="false" data-toggle="collapse"> <i class=" fas fa-user-tie"></i>Add Student Data</a>
+              <ul id="" class="collapse list-unstyled ">
+                <li><a href="newstudent.php">Add Student Data</a></li>
+                <li><a href="addparent.php">Add Parents Data</a></li>                
+              </ul>
+            </li>
+            <li><a href="SearchStudentDetail.php"><i class='fas fa-search'></i>Student/Parent Details</a></li>
             <li><a href="class.php"> <i class="fas fa-book-reader"></i>Class  </a></li>
             <li ><a href="year.php"> <i class=" far fa-calendar-alt"></i>Year    </a></li>
             <li><a href="register.php"> <i class="fas fa-font"></i>Register Admin </a></li>
@@ -170,10 +189,11 @@ border-bottom: 2px solid #009879;
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="result.php">Add Result</a></li>
                 <li class="active"><a href="showresult.php">Show Result</a></li>
-                
+                                
               </ul>
             </li>
             <li><a href="search.php"> <i class='fas fa-search'></i>Search Data </a></li>
+            
           </ul>
         </div>
       </div>
@@ -184,11 +204,12 @@ border-bottom: 2px solid #009879;
         <nav class="navbar">
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
-              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-outdent" style="font-size:20px;color:red"> </i></a><a href="dashboard.php" class="navbar-brand">
-                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">U.P.S. BHIMMAPURWA</strong> <span>Aminabad Katri, Kannauj</span></div></a></div>
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-outdent" style="font-size:20px;color:red"> </i></a><a href="index.php" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">उच्च प्राथमिक विद्यालय भिम्मापुरवा</strong> <span>कटरी अमीनाबाद, कन्नौज</span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Log out-->
-                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">Logout</span><i  class='fas fa-sign-out-alt' ></i></a></li>
+                <span class="text-success"> <?php echo date("d/m/Y")."   " .date("l");?></span>
+                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">  Logout</span><i  class='fas fa-sign-out-alt' ></i></a></li>
               </ul>
             </div>
           </div>
@@ -215,8 +236,8 @@ border-bottom: 2px solid #009879;
              <label>Academic Year :<span class="mandatory" style="color: #ff0000;">*</span></label>
           </div>
           <div class="col-sm-12">
-             <select name="year" title="Academic Year" id="academicyearid" class=' textbox form-control mandatoryvalue' onchange="myfun(this.value)" required>
-                 <option value='-1'>--Select Academic Year--</option>
+          <select name="year" title="Academic Year" id="academicyearid" class=' textbox form-control mandatoryvalue' onchange="myfun(this.value)" required>
+                 <option value='-1'>Select Academic Year</option>
               <?php
                  include('include.php');
                  $sql= "select * from year";
@@ -234,18 +255,26 @@ border-bottom: 2px solid #009879;
              <label>Class :<span class="mandatory" style="color: #ff0000;">*</span></label>
             </div>
            <div class="col-sm-12">
-              <select name="class" title="Grade" id="class"   class='textbox form-control mandatoryvalue' onchange="myfun1(this.value)" required>
-                <option value='-1'>--Class--</option>
+           <select name="class" title="Grade" id="class"   class='textbox form-control mandatoryvalue' onchange="myfun1(this.value)" required>
+                <option value='-1'>Class</option>
               </select>
            </div>
            <div class="col-sm-12">
                <label>S.R.No.<span class="mandatory" style="color: #ff0000;">*</span></label>
            </div>
            <div class="col-sm-12">
-             <select name="srno" title="S.R.No." id="srno" class='textbox form-control mandatoryvalue' onchange="myfun2(this.value)" required>
+           <select name="srno" title="S.R.No." id="srno" class='textbox form-control mandatoryvalue' onchange="myfun2(this.value)" required>
                 <option value='-1'>Select S.R.No.</option>
              </select>
             </div>
+            <div class="col-sm-12">
+                  <label>Student Name<span class="mandatory" style="color: #ff0000;">*</span></label>
+           </div>
+           <div class="col-sm-12">
+           <select name="name" title="Student Name" id="name" class='textbox form-control mandatoryvalue' required>
+                 <option value='-1'>Student Name</option>
+               </select>
+               </div>
            <div class="col-sm-12">
                   <label>Exam Type :<span class="mandatory" style="color: #ff0000;">*</span></label>
            </div>
@@ -271,6 +300,8 @@ border-bottom: 2px solid #009879;
              </p>
 
    </div>
+   <fieldset style="border: 1px solid #01a2b7;">
+            <legend style="text-align: center; border: 2px solid #01a2b7; border-radius: 30px; padding: 6px;">Result 2019</legend>
    <div class="col-sm-9" > 
             <?php  
               include('include.php');
@@ -400,6 +431,7 @@ border-bottom: 2px solid #009879;
                        </tbody>
                       </table>
                      </div>
+                     </fieldset>
         </form>
       </div>
     </div>

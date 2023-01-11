@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+<style>
+    body{
+        height: 100vh;
+        background-color: rgba(37,37,37 );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+.w3-tangerine {
+  font-family: "Tangerine", serif;
+}
+.card{
+    width: 330px;
+    height: 350px;
+    background-color: rgb(241, 245, 247);
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 3px 10px -2px rgba(red, green, blue, alpha);
+}
+.card::before, .card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0%;
+    right: 0%;
+    background-color: #fff;
+    z-index: -1;
+    transition: 0.2s;
+}
+.card:hover::before{
+    transform: rotate(-20deg);
+    box-shadow: rgba(213, 213, 219, 0.25) 0px 50px 50px -40px, rgba(156,154 ,154,0.3) 0px 30px 40px -30px,rgba(74,128 ,182,0.35 ) 0px -2px 6px 0px inset,;
+}
+.card:hover::after{
+    transform: rotate(20deg);
+    box-shadow: rgba(213, 213, 219, 0.25) 0px 50px 50px -40px, rgba(156,154 ,154,0.3) 0px 30px 40px -30px,rgba(74,128 ,182,0.35 ) 0px -2px 6px 0px inset,;
+
+}
+.img-container{
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    background-color: silver;
+    z-index: 3;
+    
+}
+.card:hover .img-container{
+    bottom: 80px;
+}
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.details{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+    height: 80px;
+}
+p{
+    height: 90px;
+    
+}
+</style>
+</head>
+<body>
+    <div class="card" style="display: flex;justify-content: center;align-items: center;">
+    <div class="img-container">
+        <img src="../images/teacher.jpg" alt="">
+
+    </div>
+    <div class="details" >
+        <h2 class="w3-tangerine" style="font-weight: bold; font-size: 24px;" >
+            Mukesh Verma
+            Head Teacher
+        </h2>
+
+    </div>
+    </div>
+</body>
+</html>

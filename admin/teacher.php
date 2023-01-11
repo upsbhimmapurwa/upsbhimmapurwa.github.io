@@ -54,7 +54,7 @@ $role=$_SESSION['role'];
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/head1.jpg" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.jpg" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5" ><?= $_SESSION['username'];?></h2><span><?= $_SESSION['role'];?></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -64,9 +64,15 @@ $role=$_SESSION['role'];
        <div class="main-menu">
           <h5 class="sidenav-heading">DASHBOARD</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li ><a href="index.php"> <i class="fas fa-home"></i>Home  </a></li>
+            <li ><a href="dashboard.php"> <i class="fas fa-home"></i>Home  </a></li>
             <li class="active" ><a href="teacher.php"> <i class="fa fa-chalkboard-teacher"></i>Teacher   </a></li>
-            <li  ><a href="newstudent.php"> <i class="fas fa-user-tie"></i>New Student  </a></li>
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class=" fas fa-user-tie"></i>Add Student Data</a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="newstudent.php">Add Student Data</a></li>
+                <li><a href="addparent.php">Add Parents Data</a></li>                
+              </ul>
+            </li>
+            <li><a href="SearchStudentDetail.php"><i class='fas fa-search'></i>Student/Parent Details</a></li>
             <li><a href="class.php"> <i class="fas fa-book-reader"></i>Class  </a></li>
             <li ><a href="year.php"> <i class=" far fa-calendar-alt"></i>Year    </a></li>
             <li><a href="register.php"> <i class="fas fa-font"></i>Register Admin </a></li>
@@ -76,10 +82,11 @@ $role=$_SESSION['role'];
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="result.php">Add Result</a></li>
                 <li><a href="showresult.php">Show Result</a></li>
-                
+                                
               </ul>
             </li>
             <li><a href="search.php"> <i class='fas fa-search'></i>Search Data </a></li>
+            
           </ul>
         </div>
        
@@ -92,10 +99,11 @@ $role=$_SESSION['role'];
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-outdent" style="font-size:20px;color:red"> </i></a><a href="index.php" class="navbar-brand">
-                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">U.P.S. BHIMMAPURWA</strong> <span>Aminabad Katri, Kannauj</span></div></a></div>
+                  <div class="brand-text d-none d-md-inline-block"><strong class="text-success">उच्च प्राथमिक विद्यालय भिम्मापुरवा</strong> <span>कटरी अमीनाबाद, कन्नौज</span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Log out-->
-                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">Logout</span><i class='fas fa-sign-out-alt'></i></a></li>
+                <span class="text-success"> <?php echo date("d/m/Y")."   " .date("l");?></span>
+                <li class="nav-item"><a href="logout.php" class="nav-link logout" style="font-size:15px;color:red"> <span class="d-none d-sm-inline-block">  Logout</span><i  class='fas fa-sign-out-alt' ></i></a></li>
               </ul>
             </div>
           </div>

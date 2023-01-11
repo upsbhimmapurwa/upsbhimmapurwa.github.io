@@ -30,7 +30,7 @@ $role=$_SESSION['role'];
   
       $name=$_POST['name'];
       $srno=$_POST['srno'];
-      //$rollno=$_POST['rollno'];
+      $rollno=$_POST['rollno'];
       $academicyearid=$_POST['academicyearid'];
       $classid=$_POST['classid'];
       $mothername=$_POST['mothername'];
@@ -44,7 +44,7 @@ $role=$_SESSION['role'];
       $gramsabh=$_POST['gramsabh']; 
       $city=$_POST['city'];  
       $pin=$_POST['pin'];  
-       $state=$_POST['state']; 
+      $state=$_POST['state']; 
       $country=$_POST['country']; 
       $caste=$_POST['caste']; 
        
@@ -57,10 +57,12 @@ $role=$_SESSION['role'];
      }
      else
      {*/
-      $query= " INSERT INTO student (srno,name,year,class,mname,fname,dob,age,village,mobile, aadhar, gender, gramsabha,city,state, pin,country,caste,photoname,photo) VALUES ('$srno','$name','$academicyearid','$classid','$mothername','$fathername','$dateofbirth','$age','$village','$mobileno','$aadhar','$genderid','$gramsabh','$city','$state','$pin','$country','$caste','$photoname','$photo')";
+      $query= " INSERT INTO student (srno,name,year,class,mname,fname,dob,age,village,mobile,aadhar,gender, gramsabha,city,state, pin,country,caste,photoname,photo) VALUES ('$srno','$name','$academicyearid','$classid','$mothername','$fathername','$dateofbirth','$age','$village','$mobileno','$aadhar','$genderid','$gramsabh','$city','$state','$pin','$country','$caste','$photoname','$photo')";
       $run=mysqli_query($conn,$query);
       if($run)
       {
+        $query1= " INSERT INTO session (srno,name,year,class) VALUES ('$srno','$name','$academicyearid','$classid')";
+      $run1=mysqli_query($conn,$query1);
         echo " data insert sucessfully";
       }
       else
@@ -73,7 +75,7 @@ $role=$_SESSION['role'];
   
   if (isset($_POST['submit']) )
    { 
-    $srno=$_POST['srno'];
+    echo $srno=$_POST['srno'];
     $sql=" select * from  student where srno ='$srno'";
   $query=mysqli_query($conn,$sql);
     $num=mysqli_num_rows($query);
@@ -184,7 +186,7 @@ border-bottom: 2px solid #009879;
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/head1.jpg" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.jpg" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5" ><?= $_SESSION['username'];?></h2><span><?= $_SESSION['role'];?></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -247,12 +249,13 @@ border-bottom: 2px solid #009879;
         <div class="container-fluid">
           <div class="row">       
             <form name='admission' class="zoom-anim-dialog mfp-hide white-popup-block mfp-hide form-horizontal" action="" method=""  enctype="multipart/form-data">            
-          <h4 style="background:#1ea0ba;color:#fff; padding:10px 0px 10px 5px">Stuff Information</h4>
+          <h4 style="background:#1ea0ba;color:#fff; padding:10px 0px 10px 5px">Student Information</h4>
     
          <table class='content-table' >
           <thead>          
           <tr>
-            <th>S.R. No.</th><th>Photo</th><th>Name</th><th>Date of Birth</th><th>Age</th><th>Father Name</th><th>Mother Name</th><th>Gender</th><th>Village</th><th>Gramsabha</th><th>Class</th><th>Mobile No.</th><th>Aadhar No.</th><th>city</th><th>State</th><th>Year</th><th>Country</th><th>Caste</th>
+            <th>
+            S.R. No.</th><th>Photo</th><th>Name</th><th>Date of Birth</th><th>Age</th><th>Father Name</th><th>Mother Name</th><th>Gender</th><th>Village</th><th>Gramsabha</th><th>Class</th><th>Mobile No.</th><th>Aadhar No.</th><th>city</th><th>State</th><th>Year</th><th>Country</th><th>Caste</th>
           </tr>
         </thead>
         <tr><td><?php echo $row['srno']; ?></td>
@@ -287,6 +290,7 @@ border-bottom: 2px solid #009879;
             <td><?php echo $row['caste'];?></td>
           </tr>
          </table>
+
         </form>
       </div>
     </div>

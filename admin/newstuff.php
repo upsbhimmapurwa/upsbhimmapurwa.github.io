@@ -156,13 +156,7 @@ textarea:focus {
 <div>&nbsp;</div>
 
 <form name='admission' class="zoom-anim-dialog mfp-hide white-popup-block mfp-hide form-horizontal" action="CreateStaffEnquiry.php" method="post"  enctype="multipart/form-data">
-            <!--  <input type="hidden" class="columnlabel" value='1' name="isweb" id="isweb"/>
-            <input type="hidden" class="columnlabel" value='' name="id" id="id"/>
-            <input type="hidden" class="columnlabel" value='' name="candidateid" id="candidateid"/>
-            <input type="hidden" class="columnlabel" value='enquiry/thanks.html' name="thankspage" id="thankspage"/>
-            <input type="hidden" class="columnlabel" value='/enquiry/error.html' name="errorpage" id="errorpage"/>
-            <input type="hidden"  value='1' name="enquiry_type_id"  id="enquiry_type_id"/>
- -->
+           
 <h4 style="background:#1ea0ba;color:#fff; padding:10px 0px 10px 5px">Stuff Information</h4>
     <div class="col-sm-3">
         <label class="control-label" for="fln">First Name :<span class="mandatory" style="color: #ff0000;">*</span></label>
