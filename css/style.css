@@ -1,130 +1,22 @@
 
 
-body {
-    padding: 0;
-    margin: 0;
-    background: #FFF;
-    font-family: 'Dosis', sans-serif;
-}
-
+body {padding: 0; margin: 0; background: #FFF; font-family: 'Dosis', sans-serif; }
 body button,
 .btn,
-body a {
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
+body a {transition: 0.5s all; -webkit-transition: 0.5s all; -moz-transition: 0.5s all; -o-transition: 0.5s all; -ms-transition: 0.5s all; }
 .btn:hover,
-body button:hover {
-    opacity: .8;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
-body a:hover {
-    opacity: .8;
-    text-decoration: none;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lora', serif;
-}
-
-p {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    letter-spacing: 1px;
-    line-height: 1.9;
-    color: #999;
-}
-
-ul,
-ol {
-    margin: 0;
-    padding: 0;
-}
-
-ul {
-    list-style-type: none;
-}
-
-/* //Reset Code */
-
+body button:hover {opacity: .8; transition: 0.5s all; -webkit-transition: 0.5s all; -moz-transition: 0.5s all; -o-transition: 0.5s all; -ms-transition: 0.5s all; }
+body a:hover {opacity: .8; text-decoration: none; transition: 0.5s all; -webkit-transition: 0.5s all; -moz-transition: 0.5s all; -o-transition: 0.5s all; -ms-transition: 0.5s all; } html {scroll-behavior: smooth;}
+ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; font-family: 'Lora', serif; }
+p {margin: 0; padding: 0; font-size: 16px; letter-spacing: 1px; line-height: 1.9; color: #999; }
+ ul, ol {margin: 0; padding: 0; } ul {list-style-type: none; } 
+ /* //Reset Code */
 /* colors code */
-.text-bl {
-    color: #343a40;
-}
-
-.text-wh {
-    color: #fff;
-}
-
-.text-li {
-    color: #f8f9fa;
-}
-
-.bg-li {
-    background: #f8f9fa;
-}
-
-.bg-wh {
-    background: #fff;
-}
-
-.let {
-    letter-spacing: 1px;
-}
-
-/* //colors code */
-
+.text-bl {color: #343a40; } .text-wh {color: #fff; } .text-li {color: #f8f9fa; } .bg-li {background: #f8f9fa; } .bg-wh {background: #fff; } .let {letter-spacing: 1px; } /* //colors code */
 /* bottom-to-top */
-a.move-top {
-    position: fixed;
-    bottom: 3%;
-    right: 2%;
-    z-index: 0;
-    background: #fff;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -o-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -moz-border-radius: 50%;
-}
-
-a.move-top span {
-    color: #000;
-    font-size: 26px;
-    line-height: 30px;
-}
-
-/* //bottom-to-top */
-
+a.move-top {position: fixed; bottom: 3%; right: 2%; z-index: 0; background: #fff; width: 30px; height: 30px; border-radius: 50%; -webkit-border-radius: 50%; -o-border-radius: 50%; -ms-border-radius: 50%; -moz-border-radius: 50%; } a.move-top span {color: #000; font-size: 26px; line-height: 30px; } /* //bottom-to-top */
 /* header */
+<<<<<<< Updated upstream
 header {
     background: #fff;
     border-bottom: 1px solid #e4e4e4;
@@ -174,96 +66,33 @@ nav ul {
     position: relative;
 }
 
+=======
+header {background: #fff; border-bottom: 1px solid #e4e4e4; position: fixed; width: 100%; z-index: 999; } /* navigation */ /* CSS Document */
+.toggle-2, .toggle, [id^=drop] {display: none; }
+ /* Giving a background-color to the nav container. */ 
+ nav {margin: 0; padding: 0; }
+  #logo a {float: right; display: initial; font-weight: 60px; font-size: 35px; color: yellow; text-shadow: 2px 5px 3px red; }
+   /* Since we'll have the "ul li" "float:left"* we need to add a clear after the container. */
+nav:after {content: ""; display: table; clear: both; }
+ /* Removing padding, margin and "list-style" from the "ul", * and adding "position:reltive" */
+nav ul {/* float: right; */ padding: 0; margin: 0; list-style: none; position: relative; }
+>>>>>>> Stashed changes
 /* Positioning the navigation items inline */
-nav ul li {
-    margin: 0px;
-    display: inline-block;
-    float: left;
-}
-
+nav ul li {margin: 0px; display: inline-block; float: left; }
 /* Styling the links */
-nav a {
-    color: #000;
-    text-transform: capitalize;
-    font-weight: 400;
-    font-size: 16px;
-    margin: 0 12px;
-    letter-spacing: 2px;
-    display: inline-block;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
-/* Background color change on Hover */
-nav a:hover {
-    color: #000;
-    opacity: .8;
-}
-
+nav a {color: #000; text-transform: capitalize; font-weight: 400; font-size: 16px; margin: 0 12px; letter-spacing: 2px; display: inline-block; transition: 0.5s all; -webkit-transition: 0.5s all; -moz-transition: 0.5s all; -o-transition: 0.5s all; -ms-transition: 0.5s all; } /* Background color change on Hover */ nav a:hover {
+    color: #000; opacity: .8; }
 /* Hide Dropdowns by Default
  * and giving it a position of absolute */
-nav ul ul {
-    display: none;
-    position: absolute;
-    top: 26px;
-    background: #ffffff;
-    padding: 10px;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -moz-border-radius: 4px;
-    z-index: 9;
-    /* has to be the same number as the "line-height" of "nav a" */
-	-webkit-box-shadow: 0px -1px 5px 0px rgba(143,143,143,0.72);
--moz-box-shadow: 0px -1px 5px 0px rgba(143,143,143,0.72);
-box-shadow: 0px -1px 5px 0px rgba(143,143,143,0.72);
-}
-
-nav ul ul li a:hover {
-}
-
-/* Display Dropdowns on Hover */
-nav ul li:hover>ul {
-    display: inherit;
-}
-
-/* Fisrt Tier Dropdown */
-nav ul ul li {
-    width: 170px;
-    float: none;
-    display: list-item;
-    position: relative;
-}
-
-nav ul ul li a {
-    display: block;
-    font-size: 14px;
-    margin: 10px 0;
-    letter-spacing: 1px;
-}
-
-/* Second, Third and more Tiers	
- * We move the 2nd and 3rd etc tier dropdowns to the left
- * by the amount of the width of the first tier.
-*/
-nav ul ul ul li {
-    position: relative;
-    top: -60px;
-    /* has to be the same number as the "width" of "nav ul ul li" */
-    left: 170px;
-}
-
-/* Change ' +' in order to change the Dropdown symbol */
-li>a:only-child:after {
+nav ul ul {display: none; position: absolute; top: 26px; background: #ffffff; padding: 10px; border-radius: 4px; -webkit-border-radius: 4px; -o-border-radius: 4px; -ms-border-radius: 4px; -moz-border-radius: 4px; z-index: 9; /* has to be the same number as the "line-height" of "nav a" */ -webkit-box-shadow: 0px -1px 5px 0px rgba(143,143,143,0.72); -moz-box-shadow: 0px -1px 5px 0px rgba(143,143,143,0.72); box-shadow: 0px -1px 5px 0px rgba(143,143,143,0.72); }
+nav ul ul li a:hover {} /* Display Dropdowns on Hover */ 
+nav ul li:hover>ul {display: inherit; } /* Fisrt Tier Dropdown */ nav ul ul li {width: 170px; float: none; display: list-item; position: relative; } nav ul ul li a {display: block; font-size: 14px; margin: 10px 0; letter-spacing: 1px; } /* Second, Third and more Tiers * We move the 2nd and 3rd etc tier dropdowns to the left * by the amount of the width of the first tier. */ nav ul ul ul li {position: relative; top: -60px; /* has to be the same number as the "width" of "nav ul ul li" */ left: 170px; } /* Change ' +' in order to change the Dropdown symbol */ li>a:only-child:after {
     content: '';
 }
 
 /* Media Queries
 --------------------------------------------- */
+<<<<<<< Updated upstream
 @media(max-width: 1280px) {
     nav a {
         font-size: 14px;
@@ -516,11 +345,15 @@ li>a:only-child:after {
     border-bottom-right-radius: 5px;
 }
 
+=======
+@media(max-width: 1280px) {nav a {font-size: 14px; } } @media all and (max-width : 991px) {#logo {display: block; padding: 0; width: 100%; text-align: center; float: none; } nav {margin: 0; } /* Hide the navigation menu by default */ /* Also hide the  */ .toggle+a, .menu {display: none; } /* Stylinf the toggle lable */ .toggle {display: block; padding: 7px 12px; font-size: 15px; text-decoration: none; border: none; float: right; background-color: #eee; color: #000; border-radius: 4px; -webkit-border-radius: 4px; -o-border-radius: 4px; -ms-border-radius: 4px; -moz-border-radius: 4px; letter-spacing: 1px; margin-bottom: 0; cursor: pointer; transition: 0.5s all; -webkit-transition: 0.5s all; -moz-transition: 0.5s all; -o-transition: 0.5s all; -ms-transition: 0.5s all; } .menu .toggle {float: none; text-align: center; margin: auto; max-width: 115px; padding: 5px; font-weight: normal; font-size: 14px; letter-spacing: 2px; background: transparent; color: #000; } .toggle:hover {opacity: .8; transition: 0.5s all; -webkit-transition: 0.5s all; -moz-transition: 0.5s all; -o-transition: 0.5s all; -ms-transition: 0.5s all; } /* Display Dropdown when clicked on Parent Lable */ [id^=drop]:checked+ul {display: block; padding: 15px 0; text-align: center; width: 100%; } nav ul {float: right; } /* Change menu item's width to 100% */ nav ul li {display: block; width: 100%; } nav a:hover, nav ul ul ul a {background-color: transparent; } /* Hide Dropdowns by Default */ nav ul ul {float: none; position: static; color: #ffffff; /* has to be the same number as the "line-height" of "nav a" */ } /* Hide menus on hover */ nav ul ul li:hover>ul, nav ul li:hover>ul {display: none; } /* Fisrt Tier Dropdown */ nav ul ul li {display: block; width: 100%; padding: 0; } nav ul ul li a {letter-spacing: 2px; } nav ul ul ul li {position: static; /* has to be the same number as the "width" of "nav ul ul li" */ } .menu li.active a, .menu li a:hover {opacity: .8; } nav a {font-size: 14px; display: block; margin: 8px 0; } a.reqe-button {padding: 12px 20px; font-size: 13px; margin: 0 8px; } } @media all and (max-width : 330px) {nav ul li {display: block; width: 94%; } } /* dropdown */ #demo {margin: 10px 0 0px 0; } #demo .wrapper {display: inline-block; position: relative; } #demo .parent {height: 100%; width: 100%; display: block; cursor: pointer; line-height: 30px; height: 30px; color: #fff; z-index: 2; position: relative; -webkit-transition: border-radius .1s linear, background .1s linear, z-index 0s linear; -webkit-transition-delay: 0.8s; text-align: center; color: #fff; text-transform: capitalize; font-weight: 500; font-size: 15px; letter-spacing: 1px; padding-left: 0; padding-right: 0; } #demo .parent:hover, #demo .content:hover~.parent{-webkit-transition-delay: 0s, 0s, 0s; } #demo .content:hover~.parent {border-bottom-left-radius: 0; border-bottom-right-radius: 0; z-index: 0; } #demo .content {position: absolute; top: 0; display: block; z-index: 1; height: 0; width: 150px; padding-top: 30px; -webkit-transition: height .5s ease; -webkit-transition-delay: .4s; } #demo .wrapper:active .content {height: 150px; z-index: 3; -webkit-transition-delay: 0s; } #demo .content:hover {height: 150px; z-index: 3; -webkit-transition-delay: 0s; } #demo .content ul {background: #fff; margin: 0; padding: 0; overflow: hidden; height: 100%; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; } #demo .content ul a {text-decoration: none; padding: 0; } #demo .content li {list-style: none; text-align: left; color: #999; font-size: 16px; line-height: 30px; height: 40px; line-height: 40px; padding-left: 10px; border-top: 1px solid #eee; } #demo .content li:last-of-type {border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
+>>>>>>> Stashed changes
 /* //dropdown */
 /* //navigation */
 /* //header */
 
 /* banner */
+<<<<<<< Updated upstream
 .mian-content-wthree {
     background: url(../images/ban_1.jpg) no-repeat center;
     background-size: cover;
@@ -533,92 +366,23 @@ li>a:only-child:after {
     z-index: 1;
 }
 
+=======
+.mian-content-wthree {background: url(../images/ban_1.webp) no-repeat center; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -ms-background-size: cover; min-height: 50vw; position: relative; z-index: 1; } @media only screen and (min-device-width: 400px) {
+    body {background-image: url(../images/ban_1.webp) no-repeat center; } }
+  
+>>>>>>> Stashed changes
 /* banner text */
-.style-banner {
-    padding-top: 18em;
-    max-width: 800px;
-}
-
-.style-banner h3 {
-    font-size: 52px;
-    letter-spacing: 1px;
-}
-
-.style-banner h3 span {
-    color: #ff7f62;
-}
-
-.style-banner p {
-    font-size: 18px;
-    letter-spacing: 4px;
-}
-
+.style-banner {padding-top: 18em; max-width: 800px; } .style-banner h3 {font-size: 52px; letter-spacing: 1px; } .style-banner h3 span {color: #ff7f62; } .style-banner p {font-size: 18px; letter-spacing: 4px; }
 /* //banner text */
 /* form */
-.home-form-w3ls .form-control {
-    font-size: 15px;
-    border: none;
-    -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.28);
-    -moz-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.28);
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.28);
-    outline: none;
-    letter-spacing: 1px;
-    color: #000;
-    box-sizing: border-box;
-    border-radius: 0px;
-    -webkit-border-radius: 0px;
-    -o-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -moz-border-radius: 0px;
-    padding: 12px;
-}
-
-.home-form-w3ls textarea.form-control {
-    height: 46px;
-}
-
-.home-form-w3ls button {
-    background: #ff7f62;
-    color: #fff;
-    padding: 13px 40px;
-    margin-top: 2em;
-    border: none;
-    outline: none;
-    letter-spacing: 1px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -o-border-radius: 0;
-    -ms-border-radius: 0;
-    -moz-border-radius: 0;
-}
-
+.home-form-w3ls .form-control {font-size: 15px; border: none; -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.28); -moz-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.28); box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.28); outline: none; letter-spacing: 1px; color: #000; box-sizing: border-box; border-radius: 0px; -webkit-border-radius: 0px; -o-border-radius: 0px; -ms-border-radius: 0px; -moz-border-radius: 0px; padding: 12px; }
+.home-form-w3ls textarea.form-control {height: 46px; }
+.home-form-w3ls button {background: #ff7f62; color: #fff; padding: 13px 40px; margin-top: 2em; border: none; outline: none; letter-spacing: 1px; font-size: 16px; cursor: pointer; border-radius: 0; -webkit-border-radius: 0; -o-border-radius: 0; -ms-border-radius: 0; -moz-border-radius: 0; }
 /* //form */
 /* //banner */
 
 /* bannner bottom */
-h3.title-w3 {
-    font-size: 42px;
-    color: #719cfe;
-}
-
-.services h3.title-w3,
-.clients h3.title-w3,
-.contact h3.title-w3 {
-    color: #fff;
-}
-
-h3.title-sub {
-    font-size: 27px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-}
-
-h3.title-sub span {
-    display: block;
-}
-
+h3.title-w3 {font-size: 42px; color: #719cfe; } .services h3.title-w3, .clients h3.title-w3, .contact h3.title-w3 {color: #fff; } h3.title-sub {font-size: 27px; line-height: 1.5; letter-spacing: 1px; } h3.title-sub span {display: block; }
 /* //bannner bottom */
 
 /* what */
@@ -700,7 +464,11 @@ a.service-btn:hover,
 }
 
 .team-img-1 {
+<<<<<<< Updated upstream
     background: url(../images/g22.png) no-repeat center;
+=======
+    background: url(../images/g.webp) no-repeat center;
+>>>>>>> Stashed changes
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -709,7 +477,7 @@ a.service-btn:hover,
 }
 
 .team-img-2 {
-    background: url(../images/g23.jpg) no-repeat center;
+    background: url(../images/g23.webp) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -718,7 +486,7 @@ a.service-btn:hover,
 }
 
 .team-img-3 {
-    background: url(../images/gal_23.jpg) no-repeat center;
+    background: url(../images/gal_23.webp) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -727,7 +495,7 @@ a.service-btn:hover,
 }
 
 .team-img-4 {
-    background: url(../images/g25.jpg) no-repeat center;
+    background: url(../images/g25.webp) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -754,7 +522,7 @@ a.service-btn:hover,
 
 /* testimonials */
 .clients {
-    background: url(../images/banner5.jpg) no-repeat center fixed;
+    background: url(../images/banner5.webp) no-repeat center fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -981,7 +749,7 @@ ul.apps-lists li a.active span {
 
 /* contact */
 .contact {
-    background: url(../images/images.jpg) no-repeat 0px 0px;
+    background: url(../images/images.webp) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1039,7 +807,11 @@ ul.apps-lists li a.active span {
 
 /* inner banner */
 .inner-banner-w3ls {
+<<<<<<< Updated upstream
     background: url(../images/banneer5.jpg) no-repeat center;
+=======
+    background: url(../images/banner5.webp) no-repeat center;
+>>>>>>> Stashed changes
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;

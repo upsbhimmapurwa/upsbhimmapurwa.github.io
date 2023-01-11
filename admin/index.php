@@ -45,7 +45,11 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="keywords" content="उच्च प्राथमिक विद्यालय भिम्मापुरवा " />
+<<<<<<< Updated upstream
     <link rel="icon" href="images/ban_32x32.jpg" sizes="32x32" />
+=======
+    <link rel="icon" href="../images/ban_32x32.webp" sizes="32x32" />
+>>>>>>> Stashed changes
     <script>
         addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -72,7 +76,12 @@ if(isset($_POST['submit'])){
         rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
     <!-- //Web-Fonts -->
+<<<<<<< Updated upstream
 </head>
+=======
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script> $(document).ready(function(){$("#slidedown1").slideDown(10000); $("#slidedown2").slideDown(10000); $("#slidedown3").slideDown(10000); $("#slidedown4").slideDown(10000); }); $(document).ready(function(){$("body").bind('cut copy paste',function (e) {e.preventDefault(); }) $("body").on("contextmenu",function (e) {alert("Sorry, you do not have permission to right click."); return false; }) }); </script> </head>
+>>>>>>> Stashed changes
 
 <body>
     <!-- header -->
@@ -109,8 +118,13 @@ if(isset($_POST['submit'])){
     <!-- //header -->
 
     <!-- inner banner -->
+<<<<<<< Updated upstream
     <div class="inner-banner-w3ls py-5" id="home"style="background-image: url(../admin/images/ban_1.jpg);">
         <div class="container py-xl-5 py-lg-3">
+=======
+    <div class="inner-banner-w3ls py-5" id="home"style="background-image: url(../web/admin/images/ban_1.webp);">
+        <div class="container py-xl-5 py-sm-3">
+>>>>>>> Stashed changes
             <!-- login  -->
             <div class="modal-body my-5 pt-4"style="background-color: #B6C8C6 " >
                 <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold" style="font-size: 35px;color:red;">Login Now</h3><hr style="color:white;">
