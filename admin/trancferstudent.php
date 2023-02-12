@@ -151,7 +151,7 @@ border-bottom: 2px solid #009879;
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.jpg" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.webp" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5" ><?= $_SESSION['username'];?></h2><span><?= $_SESSION['role'];?></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -223,7 +223,7 @@ border-bottom: 2px solid #009879;
       $name = $_POST['name'];
      // $class = $_POST['class'];
       }?>
-        <div align="right"><a href="../admin/exporttoTC.php?srno=<?php echo $sr; ?>&name=<?php echo $name; ?>&class=<?php echo $class; ?>&year=<?php echo $year; ?>" class="btn btn-primary" style="text-decoration: none;">Download T.C</a></div>
+        
       </div>
   <div class="container">
      	<div class="row justify-content">
@@ -252,6 +252,7 @@ border-bottom: 2px solid #009879;
 
    
    <div class="col-sm-9" > 
+             <div align="right"><a href="../admin/exporttoTC.php?srno=<?php echo $sr; ?>" class="btn btn-primary" style="text-decoration: none;">Download T.C</a></div>
              <?php
 if (isset($_POST['submit'])) 
 {
@@ -303,7 +304,7 @@ if (isset($_POST['submit']))
                while ( $row = mysqli_fetch_array($query))
                    {?>
                     <tr><?php $sr=$row['srno'];?>
-                        <td><a href="exporttoTC.php?id=<?php echo $sr ?>"><?php echo $row['srno']; ?></a></td>
+                        <td><a href="exporttoTC.php?id=<?php echo $sr; ?>"><?php echo $row['srno']; ?></a></td>
                         <td><?php echo  '<img src="data:image;base64,'. $row['photo'].'"  width="50px" height="60px" float="left">';  ?></td>
                         <td><a ><?php echo $row['name']; ?></td>
                           <!--  <td><?php //echo $row['rollno']; ?></td> -->

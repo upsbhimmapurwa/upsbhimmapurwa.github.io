@@ -138,8 +138,11 @@ $role=$_SESSION['role'];
   
 
   <div class="col-sm-4">
-    <label class="control-label" for="em">Student Roll No.:<span class="mandatory" style="color: #ff0000;">*</span></label>
-    <input type="text" title="rollno" id="rollno" name="rollno" value='' class="textbox form-control text_upper" >
+    <label class="control-label" for="fln">Admission Date:<span class="mandatory" style="color: #ff0000;">*</span></label>
+     <input type="TEXT" title="Admission date" id="admissiondate" name="admissiondate" value='' class="textbox date tcal form-control" readonly />
+
+    
+    
     </div>
   <div class="col-sm-4">
     <label>Academic Year :<span class="mandatory" style="color: #ff0000;">*</span></label>
@@ -310,6 +313,18 @@ $role=$_SESSION['role'];
                 changeYear: true
             })
         })
+        $(document).ready(function () {
+            var date = "";
+            $('#admissiondate').datepicker({
+                onSelect: function (value, ui) {
+                    var adate = new Date();
+                    amissiondate = adate.getFullYear() - ui.selectedYear;
+                    },
+                changeMonth: true,
+                changeYear: true
+            })
+        })
+        
     </script>
    <!-- JavaScript files-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>

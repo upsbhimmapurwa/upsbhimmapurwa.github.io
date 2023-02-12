@@ -34,7 +34,7 @@ $imgdata = base64_decode($row['photo']);
 
 // Image example with resizing
 
-$pdf->Image('img/ups logo.png','', '',15, 10, '', '', 'T', false, 130,'L', false, false, 0, false, false, false);
+$pdf->Image('img/ups logo.webp','', '',15, 10, '', '', 'T', false, 130,'L', false, false, 0, false, false, false);
 $pdf-> Cell(160,5,'U.P.S. BHIMMAPURWA',0,1,'C');
 $pdf-> Cell(190,5,'Aminabad Katari, Kannauj',0,1,'C');
 $pdf-> ln();

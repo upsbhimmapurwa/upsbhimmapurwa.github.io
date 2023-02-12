@@ -48,80 +48,8 @@ $role=$_SESSION['role'];
     <!-- Favicon-->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-        <style>
-          .w3-tangerine {
-  font-family: "Tangerine", serif;
-}
-.card{
-    width: 270px;
-    height: 350px;
-    background-color: rgb(241, 245, 247);
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0 3px 10px -2px rgba(red, green, blue, alpha);
-    left: 10px;
-    right: 10px;
-}
-.card::before, .card::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0%;
-    right: 0%;
-    background-color: #fff;
-    z-index: -1;
-    transition: 0.2s;
-}
-.card:hover::before{
-    transform: rotate(-20deg);
-    box-shadow: rgba(213, 213, 219, 0.25) 0px 50px 50px -40px, rgba(156,154 ,154,0.3) 0px 30px 40px -30px,rgba(74,128 ,182,0.35 ) 0px -2px 6px 0px inset,;
-}
-.card:hover::after{
-    transform: rotate(20deg);
-    box-shadow: rgba(213, 213, 219, 0.25) 0px 50px 50px -40px, rgba(156,154 ,154,0.3) 0px 30px 40px -30px,rgba(74,128 ,182,0.35 ) 0px -2px 6px 0px inset,;
-
-}
-.img-container{
-    position: absolute;
-    top: 10px;
-    bottom: 10px;
-    right: 10px;
-    left: 10px;
-    background-color: silver;
-    z-index: 3;
-    
-}
-.card:hover .img-container{
-    bottom: 80px;
-}
-img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-}
-.details{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    left: 10px;
-    text-align: center;
-    height: 50px;
-}
-p{
-    height: 90px;
-    
-}
-
-
-        </style>
-  </head>
+        <style> .w3-tangerine {font-family: "Tangerine", serif; } .card{width: 270px; height: 350px; background-color: rgb(241, 245, 247); border-radius: 5px; position: relative; box-shadow: 0 3px 10px -2px rgba(red, green, blue, alpha); left: 10px; right: 10px; } .card::before, .card::after{content: ""; position: absolute; width: 100%; height: 100%; top: 0; bottom: 0; left: 0%; right: 0%; background-color: #fff; z-index: -1; transition: 0.2s; } .card:hover::before{transform: rotate(-20deg); box-shadow: rgba(213, 213, 219, 0.25) 0px 50px 50px -40px, rgba(156,154 ,154,0.3) 0px 30px 40px -30px,rgba(74,128 ,182,0.35 ) 0px -2px 6px 0px inset,; } .card:hover::after{transform: rotate(20deg); box-shadow: rgba(213, 213, 219, 0.25) 0px 50px 50px -40px, rgba(156,154 ,154,0.3) 0px 30px 40px -30px,rgba(74,128 ,182,0.35 ) 0px -2px 6px 0px inset,; } .img-container{position: absolute; top: 10px; bottom: 10px; right: 10px; left: 10px; background-color: silver; z-index: 3; } .card:hover .img-container{bottom: 80px; } img{position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; } .details{position: absolute; bottom: 10px; right: 10px; left: 10px; text-align: center; height: 50px; } p{height: 90px; } 
+      </style> </head>
   <body>
     <!-- Side Navbar -->
     <nav class="side-navbar">
@@ -129,7 +57,7 @@ p{
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.jpg" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center" style="text-transform: capitalize;"><img src="../images/teacher.webp" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5" ><?= $_SESSION['username'];?></h2><span><?= $_SESSION['role'];?></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -315,7 +243,7 @@ p{
             <!--Principal-->
             <div class="col-lg-3 col-sm-6 ">
             <div class="card" style="display: flex;justify-content: center;align-items: center;">
-               <div class="img-container"><img src="../images/teacher.jpg" alt=""></div>
+               <div class="img-container"><img src="../images/teacher.webp" alt=""></div>
                <div class="details" >
                      <h2 class="display h4">Mukesh Verma</h2>
                    <h2 class="w3-tangerine" style="font-weight: bold; font-size: 24px;" >
@@ -326,7 +254,7 @@ p{
             <!-- Assistant Teacher -->
             <div class="col-lg-3 col-sm-6">
             <div class="card" style="display: flex;justify-content: center;align-items: center;">
-               <div class="img-container"><img src="../images/teacher.jpg" alt=""></div>
+               <div class="img-container"><img src="../images/teacher.webp" alt=""></div>
                <div class="details" >
                      <h2 class="display h4">Mukesh Verma</h2>
                    <h2 class="w3-tangerine" style="font-weight: bold; font-size: 24px;" >
@@ -336,7 +264,7 @@ p{
             </div>
          <div class="col-lg-3 col-sm-6">
           <div class="card" style="display: flex;justify-content: center;align-items: center;">
-               <div class="img-container"><img src="../images/teacher.jpg" alt=""></div>
+               <div class="img-container"><img src="../images/teacher.webp" alt=""></div>
                <div class="details" >
                      <h2 class="display h4">Mukesh Verma</h2>
                    <h2 class="w3-tangerine" style="font-weight: bold; font-size: 24px;" >

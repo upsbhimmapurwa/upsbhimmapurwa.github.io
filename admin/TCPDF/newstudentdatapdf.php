@@ -35,7 +35,7 @@ $imgdata = base64_decode($row['photo']);
 
 // Image example with resizing
 
-$pdf->Image('img/ups logo.png','', '',20, 20, '', '', 'T', false, 130,'L', false, false, 0, false, false, false);
+$pdf->Image('img/ups logo.webp','', '',20, 20, '', '', 'T', false, 130,'L', false, false, 0, false, false, false);
 $pdf->Ln(2);
 $html = <<<EOD
 <p style="color:#CC0000;text-align:center;font-size:18;">UPPER PRIMARY SCHOOL BHIMMAPURWA,</p>
@@ -257,5 +257,5 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->SetFont('helvetica', 'B', 20);
 
 
-$pdf->Output('RESULT2019.pdf');
+$pdf->Output('RESULT2022.pdf');
 ?>

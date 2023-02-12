@@ -117,6 +117,7 @@ border-bottom: 2px solid #009879;
               </ul>
             </li>
             <li><a href="SearchStudentDetail.php"><i class='fas fa-search'></i>Student/Parent Details</a></li>
+            <li><a href="trancferstudent.php"><i class='fas fa-search'></i>T.C. issue</a></li>
             <li><a href="class.php"> <i class="fas fa-book-reader"></i>Class  </a></li>
             <li ><a href="year.php"> <i class=" far fa-calendar-alt"></i>Year    </a></li>
             <li><a href="register.php"> <i class="fas fa-font"></i>Register Admin </a></li>
@@ -129,7 +130,7 @@ border-bottom: 2px solid #009879;
                                 
               </ul>
             </li>
-            <li class="active"><a href="search.php"> <i class='fas fa-search'></i>Search Data </a></li>
+            <li><a href="search.php"> <i class='fas fa-search'></i>Search Data </a></li>
             
           </ul>
         </div>

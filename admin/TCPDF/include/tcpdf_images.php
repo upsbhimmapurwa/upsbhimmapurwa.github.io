@@ -231,6 +231,102 @@ class TCPDF_IMAGES {
 		}
 		return array('w' => $a[0], 'h' => $a[1], 'ch' => $channels, 'icc' => $icc, 'cs' => $colspace, 'bpc' => $bpc, 'f' => 'DCTDecode', 'data' => $data);
 	}
+/**
+	 * Convert the loaded image to a WEBP and then return a structure for the PDF creator.
+	 * This function requires GD library and write access to the directory defined on K_PATH_CACHE constant.
+	 * @param $image (image) Image object.
+	 * @param $quality (int) WEBP quality.
+	 * @param $tempfile (string) Temporary file name.
+	 * return image JPEG image object.
+	 * @public static
+	 */
+	public static function _toWEBP($image, $quality, $tempfile) {
+		imagewebp($image, $tempfile, $quality);
+		imagedestroy($image);
+		$retvars = self::_parsewebp($tempfile);
+		// tidy up by removing temporary image
+		unlink($tempfile);
+		return $retvars;
+	}
+
+	/**
+	 * Extract info from a WEBP file without using the GD library.
+	 * @param $file (string) image file to parse
+	 * @return array structure containing the image data
+	 * @public static
+	 */
+	public static function _parsewebp($file) {
+		// check if is a local file
+		if (!@TCPDF_STATIC::file_exists($file)) {
+			return false;
+		}
+		$a = getimagesize($file);
+		if (empty($a)) {
+			//Missing or incorrect image file
+			return false;
+		}
+		if ($a[2] != 2) {
+			// Not a WEBP file
+			return false;
+		}
+		// bits per pixel
+		$bpc = isset($a['bits']) ? intval($a['bits']) : 8;
+		// number of image channels
+		if (!isset($a['channels'])) {
+			$channels = 3;
+		} else {
+			$channels = intval($a['channels']);
+		}
+		// default colour space
+		switch ($channels) {
+			case 1: {
+				$colspace = 'DeviceGray';
+				break;
+			}
+			case 3: {
+				$colspace = 'DeviceRGB';
+				break;
+			}
+			case 4: {
+				$colspace = 'DeviceCMYK';
+				break;
+			}
+			default: {
+				$channels = 3;
+				$colspace = 'DeviceRGB';
+				break;
+			}
+		}
+		// get file content
+		$data = file_get_contents($file);
+		// check for embedded ICC profile
+		$icc = array();
+		$offset = 0;
+		while (($pos = strpos($data, "ICC_PROFILE\0", $offset)) !== false) {
+			// get ICC sequence length
+			$length = (TCPDF_STATIC::_getUSHORT($data, ($pos - 2)) - 16);
+			// marker sequence number
+			$msn = max(1, ord($data[($pos + 12)]));
+			// number of markers (total of APP2 used)
+			$nom = max(1, ord($data[($pos + 13)]));
+			// get sequence segment
+			$icc[($msn - 1)] = substr($data, ($pos + 14), $length);
+			// move forward to next sequence
+			$offset = ($pos + 14 + $length);
+		}
+		// order and compact ICC segments
+		if (count($icc) > 0) {
+			ksort($icc);
+			$icc = implode('', $icc);
+			if ((ord($icc[36]) != 0x61) OR (ord($icc[37]) != 0x63) OR (ord($icc[38]) != 0x73) OR (ord($icc[39]) != 0x70)) {
+				// invalid ICC profile
+				$icc = false;
+			}
+		} else {
+			$icc = false;
+		}
+		return array('w' => $a[0], 'h' => $a[1], 'ch' => $channels, 'icc' => $icc, 'cs' => $colspace, 'bpc' => $bpc, 'f' => 'DCTDecode', 'data' => $data);
+	}
 
 	/**
 	 * Extract info from a PNG file without using the GD library.

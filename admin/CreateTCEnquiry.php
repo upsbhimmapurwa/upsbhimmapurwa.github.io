@@ -348,9 +348,6 @@ border-bottom: 2px solid #009879;
    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="../admin/dashboard/jquery/jquery.min.js"></script>
     <script src="../admin/dashboard/jquery/bootstrap.bundle.min.js"></script>
-    <script src="../admin/dashboard/jquery/grasp_mobile_progress_circle-1.0.0.min.js"></script>
-    <script src="../admin/dashboard/jquery/jquery.cookie.js"> </script>
-    <script src="../admin/dashboard/jquery/Chart.min.js"></script>
     <script src="../admin/dashboard/jquery/jquery.validate.min.js"></script>
     <script src="../admin/dashboard/jquery/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->

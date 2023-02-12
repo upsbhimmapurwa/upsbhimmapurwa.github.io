@@ -24,7 +24,7 @@ include('include.php');
   
      $name=$_POST['name'];
       $srno=$_POST['srno'];
-       $rollno=$_POST['rollno'];
+       $admissiondate=$_POST['admissiondate'];
       $academicyearid=$_POST['academicyearid'];
       $classid=$_POST['classid'];
       $mothername=$_POST['mothername'];
@@ -53,12 +53,12 @@ include('include.php');
      {*/
       if ($photoname!="" || $photo!="")
        {
-         $query= " UPDATE student SET name ='$name', dob ='$dateofbirth' ,age = '$age', fname ='$fathername', mname ='$mothername', gender='$genderid', village ='$village', gramsabha ='$gramsabha',city ='$city',class ='$classid',pin ='$pin', state='$state', country ='$country',caste = '$caste', mobile ='$mobileno' ,aadhar='$aadhar',year='$academicyearid', photoname='$photoname',photo='$photo' WHERE srno ='$srno'";
+         $query= " UPDATE student SET name ='$name', dob ='$dateofbirth' ,age = '$age', fname ='$fathername', mname ='$mothername', gender='$genderid', village ='$village', gramsabha ='$gramsabha',city ='$city',class ='$classid',pin ='$pin', state='$state', country ='$country',caste = '$caste', mobile ='$mobileno' , admissiondate ='$admissiondate',aadhar='$aadhar',year='$academicyearid', photoname='$photoname',photo='$photo' WHERE srno ='$srno'";
         }
          else
          {
            
-        $query= " UPDATE student SET name ='$name',dob ='$dateofbirth' ,age = '$age', fname ='$fathername', mname ='$mothername', gender='$genderid', village ='$village', gramsabha ='$gramsabha',city ='$city',class ='$classid',pin ='$pin', state='$state', country ='$country',caste = '$caste',mobile ='$mobileno' ,aadhar='$aadhar',year='$academicyearid', photoname='$photoname',photo='$photo' WHERE srno ='$srno'";
+        $query= " UPDATE student SET name ='$name',dob ='$dateofbirth' ,age = '$age', fname ='$fathername', mname ='$mothername', gender='$genderid', village ='$village', gramsabha ='$gramsabha',city ='$city',class ='$classid',pin ='$pin', state='$state', country ='$country',caste = '$caste',mobile ='$mobileno', admissiondate ='$admissiondate' ,aadhar='$aadhar',year='$academicyearid', photoname='$photoname',photo='$photo' WHERE srno ='$srno'";
       }
       
       $run=mysqli_query($conn,$query);
@@ -221,6 +221,12 @@ background-color: #f3f3f3;
           <tr>
             <td>Name</td><td></td>
             <td><?php echo $row['name']; ?></td>
+                     </tr>
+                        
+          <tr>
+            <tr>
+            <td>Amission</td><td></td>
+            <td><?php echo $row['admissiondate']; ?></td>
                      </tr>
                         
           <tr>

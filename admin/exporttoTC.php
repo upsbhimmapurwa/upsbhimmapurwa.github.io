@@ -11,7 +11,8 @@ $role=$_SESSION['role'];
 <?php 
 
 
- echo $srno=$_GET['id'];
+ echo $srno=$_GET['srno'];
+
 
 
   
@@ -162,7 +163,7 @@ var message='';
 <div style="background-color:#fff" class="container">
 <div class="row"> 
   <div class="col-md-2">
-    <img style="margin-top: 18px; height:80px; border-radius:5px 5px 0 0; border:2px solid #009879; " src="images/uplogo.jpg">
+    <img style="margin-top: 18px; height:80px; border-radius:5px 5px 0 0; border:2px solid #009879; " src="images/ups logo.webp">
   </div>
   <div class="col-md-8 text-center">
     <h2 style="text-shadow: 4px 3px #e4e4e4; font-size: 35px; margin-top: 20px;margin-bottom: -12px; font-weight:bold; color:#1ea0ba">बेसिक शिक्षा परिषद उत्तर प्रदेश </h2>
@@ -177,7 +178,7 @@ var message='';
 </div>
 <div>&nbsp;</div>
 
-<form name='admission' class="zoom-anim-dialog mfp-hide white-popup-block mfp-hide form-horizontal" action="SearchUpdateVeiw.php" method="post" enctype="multipart/form-data">
+<form name='admission' class="zoom-anim-dialog mfp-hide white-popup-block mfp-hide form-horizontal" action="CreateTC.php" method="post" enctype="multipart/form-data">
             <input type="hidden" class="columnlabel" value='1' name="isweb" id="isweb"/>
       <input type="hidden" class="columnlabel" value='' name="id" id="id"/>
       <input type="hidden" class="columnlabel" value='' name="candidateid" id="candidateid"/>
@@ -187,28 +188,43 @@ var message='';
 
 <h4 style="background:#1ea0ba;color:#fff; padding:10px 0px 10px 5px">स्थानान्तरण प्रमाणपत्र</h4>
   <div class="col-sm-3">
-    <label class="control-label" for="fln">Student Name :<span class="mandatory" style="color: #ff0000;">*</span></label>
+    <label class="control-label" for="fln">Student Name :<span class="mandatory" style="color: #ff0000;"></span></label>
   </div>
   <div class="col-sm-3">
-    <input type="text" title="First Name" id="firstname" name="name" value='<?php echo $row['name']; ?>' class="textbox mandatoryvalue form-control text_upper" required />
+     <label class="control-label" for="fln"><?php echo $row['name']; ?><span class="mandatory" style="color: #ff0000;"></span></label>
+    
     </div>
   <div class="col-sm-3">
-    <label class="control-label" for="em">Student S.R.No. :<span class="mandatory" style="color: #ff0000;">*</span></label></div>
+    <label class="control-label" for="em">Student S.R.No. :<span class="mandatory" style="color: #ff0000;"></span></label></div>
   <div class="col-sm-3">
-    <input type="text" title="srno" id="srno" name="srno" value='<?php echo $row['srno']; ?>' class="textbox form-control text_upper" readonly>
+    <label class="control-label" for="em"><?php echo $row['srno']; ?></label></div>
+    
     </div>
   <div>&nbsp;</div>
   <div class="col-sm-3">
+    <label class="control -label" for="mn">Mother's Name :<span class="mandatory" style="color: #ff0000;">*</span></label>
+  </div>
+  <div class="col-sm-3">
+    <input type="text" title="Mother Name" id="mothername" name="mothername" value='<?php echo $row['mname']; ?>' class="textbox mandatoryvalue form-control text_upper" required />  
+    </div>
+    <div class="col-sm-3">
+    <label>Father's Name :<span class="mandatory" style="color: #ff0000;">*</span></label>
+  </div>
+  <div class="col-sm-3">
+    <input type="text" title="Father Name" id="fathername" name="fathername" value='<?php echo $row['fname']; ?>' class="textbox mandatoryvalue form-control text_upper" required />
+    </div>
+    <div>&nbsp;</div>
+  <div class="col-sm-3">
     <label class="control-label" for="em">T.C. No. :<span class="mandatory" style="color: #ff0000;">*</span></label></div>
   <div class="col-sm-3">
-    <input type="text" title="rollno" id="rollno" name="rollno" value='' class="textbox form-control text_upper" readonly>
+    <input type="text" title="rollno" id="tcno." name="tcno." value='' class="textbox form-control text_upper" readonly>
     </div>
   <div class="col-sm-3">
     <label>Academic Year :<span class="mandatory" style="color: #ff0000;">*</span></label>
   </div>
   <div class="col-sm-3">
-        <select name="academicyearid" title="Academic Year" id="academicyearid" class='form-control mandatoryvalue'>
-      <option value='<?php echo $row['year']; ?>'><?php echo $row['year']; ?></option>
+        <select name="academicyearid" title="Academic Year" id="academicyearid" class='form-control mandatoryvalue' readonly>
+      <option value='<?php echo $row['year']; ?>'></option>
       <option value="2022">2022
             </option> 
       <option value="2021">2021
@@ -219,7 +235,7 @@ var message='';
       </option>         
         </select>
   </div>
-  <div>&nbsp;</div>
+  
   <div class="col-sm-3">
     <label>Grade Applying For :<span class="mandatory" style="color: #ff0000;">*</span></label>
   </div>
@@ -243,19 +259,9 @@ var message='';
         </select>
   </div>
   
-  <div class="col-sm-3">
-    <label class="control -label" for="mn">Mother's Name :<span class="mandatory" style="color: #ff0000;">*</span></label>
-  </div>
-  <div class="col-sm-3">
-    <input type="text" title="Mother Name" id="mothername" name="mothername" value='<?php echo $row['mname']; ?>' class="textbox mandatoryvalue form-control text_upper" required />  
-    </div>
+  
     <div>&nbsp;</div>
-  <div class="col-sm-3">
-    <label>Father's Name :<span class="mandatory" style="color: #ff0000;">*</span></label>
-  </div>
-  <div class="col-sm-3">
-    <input type="text" title="Father Name" id="fathername" name="fathername" value='<?php echo $row['fname']; ?>' class="textbox mandatoryvalue form-control text_upper" required />
-    </div>
+  
  
   <div class="col-sm-3">
     <label>D.O.B :</label>
@@ -282,7 +288,7 @@ var message='';
     <label>School Leaving Reason:<span class="mandatory" style="color: #ff0000;">*</span></label>
   </div>
   <div class="col-sm-3">
-    <input type="text" title="School Leaving Reason" id="mobileno" name="mobileno" value='' maxlength="10" class="textbox form-control mandatoryvalue" required />
+    <input type="text" title="School Leaving Reason" id="mobileno" name="mobileno" value='' maxlength="100" class="textbox form-control mandatoryvalue" required />
     </div>
      
   <div class="col-sm-3">
@@ -354,7 +360,7 @@ var message='';
     </div>
     <div class="col-sm-3">
       
-        <input type="file" title="photo" id="photo" name="photo" placeholder="Choose Photo" class="textbox form-control"><div><?php echo '<img src="data:image;base64,'.$img.'"  width="100px" height="120" float="left">';?></div>
+        <div><?php echo '<img src="data:image;base64,'.$img.'"  width="100px" height="120" float="left">';?></div>
     </div>
     
   <!-- <div>&nbsp;</div>

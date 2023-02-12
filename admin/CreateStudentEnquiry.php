@@ -30,7 +30,7 @@ $role=$_SESSION['role'];
   
       $name=$_POST['name'];
       $srno=$_POST['srno'];
-      $rollno=$_POST['rollno'];
+      $admissiondate=$_POST['admissiondate'];
       $academicyearid=$_POST['academicyearid'];
       $classid=$_POST['classid'];
       $mothername=$_POST['mothername'];
@@ -57,7 +57,7 @@ $role=$_SESSION['role'];
      }
      else
      {*/
-      $query= " INSERT INTO student (srno,name,year,class,mname,fname,dob,age,village,mobile,aadhar,gender, gramsabha,city,state, pin,country,caste,photoname,photo) VALUES ('$srno','$name','$academicyearid','$classid','$mothername','$fathername','$dateofbirth','$age','$village','$mobileno','$aadhar','$genderid','$gramsabh','$city','$state','$pin','$country','$caste','$photoname','$photo')";
+      $query= " INSERT INTO student (srno,name,year,class,mname,fname,dob,age,village,mobile,admissiondate,aadhar,gender, gramsabha,city,state, pin,country,caste,photoname,photo) VALUES ('$srno','$name','$academicyearid','$classid','$mothername','$fathername','$dateofbirth','$age','$village','$mobileno','$admissiondate','$aadhar','$genderid','$gramsabh','$city','$state','$pin','$country','$caste','$photoname','$photo')";
       $run=mysqli_query($conn,$query);
       if($run)
       {
@@ -255,12 +255,13 @@ border-bottom: 2px solid #009879;
           <thead>          
           <tr>
             <th>
-            S.R. No.</th><th>Photo</th><th>Name</th><th>Date of Birth</th><th>Age</th><th>Father Name</th><th>Mother Name</th><th>Gender</th><th>Village</th><th>Gramsabha</th><th>Class</th><th>Mobile No.</th><th>Aadhar No.</th><th>city</th><th>State</th><th>Year</th><th>Country</th><th>Caste</th>
+            S.R. No.</th><th>Photo</th><th>Name</th><th>Admission Date</th><th>Date of Birth</th><th>Age</th><th>Father Name</th><th>Mother Name</th><th>Gender</th><th>Village</th><th>Gramsabha</th><th>Class</th><th>Mobile No.</th><th>Aadhar No.</th><th>city</th><th>State</th><th>Year</th><th>Country</th><th>Caste</th>
           </tr>
         </thead>
         <tr><td><?php echo $row['srno']; ?></td>
           <td><?php echo '<img style=" height:60px;width:65px;  "  src="data:image;base64,'.$img.'"   >'; ?></td>
             <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['admissiondate']; ?></td>
             <td><?php echo $row['dob']; ?></td>
             <td><?php echo $row['age']; ?></td>
           

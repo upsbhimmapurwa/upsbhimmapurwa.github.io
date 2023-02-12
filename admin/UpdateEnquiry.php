@@ -9,17 +9,10 @@ $name=$_SESSION['username'];
 $role=$_SESSION['role'];
 ?>
 <?php 
-
-
  echo $srno=$_GET['id'];
 
-
-  
-    
-  
   if (isset($_POST['submit'])|| $srno!==0 )
    { 
-    
     $sql=" select * from  student where srno='$srno'";
   $query=mysqli_query($conn,$sql);
     $num=mysqli_num_rows($query);
@@ -29,8 +22,7 @@ $role=$_SESSION['role'];
     $img=$row['photo'];
     
   }
-  
-      //mymobileapi< P1DUnNJaGM7i5dQb40auMqAjL4Innmi8VJpOjePWa0sGosUcGRdVcqbEs08c>
+        //mymobileapi< P1DUnNJaGM7i5dQb40auMqAjL4Innmi8VJpOjePWa0sGosUcGRdVcqbEs08c>
     
 ?>
 
@@ -64,6 +56,18 @@ $role=$_SESSION['role'];
                 changeYear: true
             })
         })
+        $(document).ready(function () {
+            var date = "";
+            $('#admissiondate').datepicker({
+                onSelect: function (value, ui) {
+                    var adate = new Date();
+                    amissiondate = adate.getFullYear() - ui.selectedYear;
+                    },
+                changeMonth: true,
+                changeYear: true
+            })
+        })
+        
     </script>
   
 <script type="text/javascript">
@@ -72,13 +76,14 @@ function myFunction()
   document.getElementById("savebtn").disabled = true;
   var fname=document.getElementById('firstname').value;
   var srno=document.getElementById('srno').value;
-  var rollno=document.getElementById('rollno').value;
+  var admissiondate=document.getElementById('admissiondate').value;
   var academicyearid=document.getElementById('academicyearid').value;  
   var classid=document.getElementById('classid').value;  
   var mothername=document.getElementById('mothername').value;  
   var fathername=document.getElementById('fathername').value; 
   var village=document.getElementById('village').value;   
-  var mobileno=document.getElementById('mobileno').value;   
+  var mobileno=document.getElementById('mobileno').value; 
+  var mobileno=document.getElementById('admissiondate').value;   
   var genderid=document.getElementById('genderid').value;
   var address=document.getElementById('address').value;    
   var mobileno=document.getElementById('mobileno').value;
@@ -91,9 +96,9 @@ var message='';
   {
     message="Please enter S.R.No.";
    } 
- else if(rollno=='')
+ else if(admissiondate=='')
   {
-    message="Please enter Roll No.r";
+    message="Please enter Admission date";
    } 
   else if(academicyearid=='-1')
   {
@@ -199,9 +204,9 @@ var message='';
     </div>
   <div>&nbsp;</div>
   <div class="col-sm-3">
-    <label class="control-label" for="em">Student Roll No.. :<span class="mandatory" style="color: #ff0000;">*</span></label></div>
+    <label class="control-label" for="em">Admission Date :<span class="mandatory" style="color: #ff0000;">*</span></label></div>
   <div class="col-sm-3">
-    <input type="text" title="rollno" id="rollno" name="rollno" value='' class="textbox form-control text_upper" readonly>
+    <input type="text" title="admissiondate" id="admissiondate" name="admissiondate" value='<?php echo $row['admissiondate']; ?>' class="textbox form-control text_upper" readonly>
     </div>
   <div class="col-sm-3">
     <label>Academic Year :<span class="mandatory" style="color: #ff0000;">*</span></label>
